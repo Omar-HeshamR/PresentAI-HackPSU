@@ -1,19 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
 import "@fontsource/archivo-black"
-
+import Link from 'next/link'
 
 const Navbar = () => {
   return (
     <MainBody>
       <MainContainer>
-        <LogoBox>
-        <Logo>Present AI</Logo>
-        </LogoBox>
+          <LogoBox>
+          <Link href ="/">
+          <Logo>Present AI</Logo>
+          </Link>
+          </LogoBox>
 
         <MenuBox>
-          <NavOption>Practice</NavOption>
-          <NavOption>About</NavOption>
+          <NavOption><Link href ="/practice">Practice</Link></NavOption>
+          <NavOption><Link href ="/about">About</Link></NavOption>
           <LogInButton>LOG IN</LogInButton>
         </MenuBox>
       </MainContainer>
@@ -23,7 +25,16 @@ const Navbar = () => {
 
 export default Navbar
 
+
 const MainBody = styled.div`
+a{
+  text-decoration: none;
+  color: #003366;
+
+  &[aria-current] {
+    color: #003366;
+  }
+}
 display: flex;
 width: 100%;
 height: 8vw;
@@ -55,6 +66,11 @@ margin-bottom: auto;
 color: #003366;
 font-family: "Archivo Black", sans-serif; 
 font-size: 4vw;
+transition: all 0.5s ease;
+
+&:hover{
+  transform: scale(1.05);
+}
 `
 
 const MenuBox = styled.div`
@@ -74,6 +90,7 @@ font-weight: 700;
 font-size: 2.5vw;
 // background-color: blue;
 color: #003366;
+cursor: pointer;
 
 &:hover{
   text-decoration: underline;
@@ -93,6 +110,7 @@ font-size: 2vw;
 font-weight: 900;
 // height: 5vw;
 // width: 10vw;
+cursor: pointer;
 
 &:hover{
   background-color: white;

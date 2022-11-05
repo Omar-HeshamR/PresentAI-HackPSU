@@ -10,7 +10,7 @@ const MainPageSection1 = () => {
             <MainHeader>Perfect Presenting</MainHeader>
         </MainHeaderContainer>
         <SubHeaderContainer>
-            <SubHeader>With our AI-powered, research-based instant feedback!</SubHeader>
+            <SubHeader>Ace all your intreviews and assigments with our AI-powered, research-based instant feedback!</SubHeader>
         </SubHeaderContainer>
         <GetStartedButton>GET STARTED</GetStartedButton>
       </MainContainer>
@@ -51,14 +51,14 @@ justify-content: center;
 // background-color: yellow;
 display: flex;
 width: 90%;
-height: 90%;
+height: 80%;
 flex-direction: column;
 `
 
 const MainHeaderContainer = styled.div`
 margin: 0 auto;
 display: flex;
-height: 40%;
+height: 30%;
 width: 90%;
 text-align: center;
 align-items: center;
@@ -85,11 +85,11 @@ text-align: center;
 align-items: center;
 justify-content: center;
 // background-color: green;
-margin-bottom: auto;
+margin-bottom: 1.5vw;
 `
 const SubHeader = styled.div`
 // background-color: deeppink;
-margin-bottom: auto;
+margin-bottom: 0vw;
 display: flex;
 // font-weight: 700;
 font-size: 3.5vw;
@@ -98,15 +98,16 @@ letter-spacing: 0.1vw;
 `
 
 const GetStartedButton = styled.button`
-margin: auto auto;
+margin-left: auto;
+margin-right: auto;
 // background-color: red;
 background-color: #003366;
 // border-radius: 0.75vw;
 // border: 0.4vw solid white;
 border: none;
-padding: 0.75vw 1.5vw;
+padding: 0.65vw 1.4vw;
 color: white;
-font-size: 3vw;
+font-size: 2.75vw;
 font-weight: 900;
 
 &:hover{
