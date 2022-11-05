@@ -33,7 +33,7 @@ const IntreviewPrep = () => {
       <IntreviewPracticeContainer>
         <CenteredDiv><ChatIcon /></CenteredDiv>
         <SpecialDiv><Header>Your Intreveiw Question: </Header>
-        <RandomChallange>- <RedColor>"{Question}"</RedColor></RandomChallange>
+        <RandomChallange>- <RedColor>&quot;{Question}&quot;</RedColor></RandomChallange>
         </SpecialDiv>
         <CenteredDiv><GenerateButton onClick={handleGenerate}>Generate Question</GenerateButton></CenteredDiv>
       </IntreviewPracticeContainer>

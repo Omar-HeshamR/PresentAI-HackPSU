@@ -31,7 +31,7 @@ const ImpromptuPractice = () => {
       <ImpromptuPracticeContainer>
         <CenteredDiv><ChatIcon /></CenteredDiv>
         <SpecialDiv><Header>Your Impromptu Challange: </Header>
-        <RandomChallange>For two minutes talk about the following topic: <RedColor>"{Impropmtu}"</RedColor></RandomChallange>
+        <RandomChallange>For two minutes talk about the following topic: <RedColor>&quot;{Impropmtu}&quot;</RedColor></RandomChallange>
         </SpecialDiv>
         <CenteredDiv><GenerateButton onClick={handleGenerate}>Generate Impromptu</GenerateButton></CenteredDiv>
       </ImpromptuPracticeContainer>

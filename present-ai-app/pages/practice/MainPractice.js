@@ -167,15 +167,33 @@ const MainPractice = () => {
 
 
   return (
-    <div>
-      <Webcam
-        ref={webcamRef}
-        mirrored={true}
-      >
-      </Webcam>
-
-    </div>
+    <Section>
+      <CameraDiv>
+        <Webcam
+          ref={webcamRef}
+          mirrored={true}
+        >
+        </Webcam>
+      </CameraDiv>
+    </Section>
   )
 }
+
+
+const Section = styled.section`
+  font-family: "Outfit", sans-serif; 
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+  height: 50vw;
+  flex-direction: column;
+  background-color: #99ccff;
+`
+const CameraDiv = styled.div`
+border: 10px solid white;
+margin-top: 2.5vw;
+display: flex;
+justify-content: center;
+`
 
 export default MainPractice
