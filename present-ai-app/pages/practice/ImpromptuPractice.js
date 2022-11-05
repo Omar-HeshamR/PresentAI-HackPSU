@@ -80,6 +80,8 @@ font-size: 5vw;
 `
 
 const ImpromptuPracticeContainer = styled.div`
+margin-top: 1vw;
+margin-bottom: 1vw;
 display: flex;
 height: 8vw;
 flex-direction: row;
