@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import "@fontsource/archivo-black"
 import Link from 'next/link'
+import { keyframes } from 'styled-components';
 
 const Navbar = () => {
   return (
@@ -26,6 +27,19 @@ const Navbar = () => {
 export default Navbar
 
 
+const gradient = keyframes`
+0% {
+  background-position: 0% 50%;
+}
+50% {
+  background-position: 100% 50%;
+}
+100% {
+  background-position: 0% 50%;
+}
+
+`
+
 const MainBody = styled.div`
 a{
   text-decoration: none;
@@ -39,7 +53,12 @@ display: flex;
 width: 100%;
 height: 8vw;
 // background-color: #99ccff;
-background-color: #ADD6FF;
+// background-color: #ADD6FF;
+background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+background-size: 400% 400%;
+animation-name: ${gradient};
+animation-duration: 8s;
+animation-iteration-count: infinite;
 justify-content: center;
 align-items: center;
 `

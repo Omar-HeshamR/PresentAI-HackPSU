@@ -113,14 +113,14 @@ background-color: white;
 // border-radius: 0.75vw;
 // border: 0.4vw solid white;
 border: none;
+border-radius: 0.75vw;
 padding: 0.75vw 1.5vw;
 color: #003366;
 font-size: 3vw;
 font-weight: 900;
 
 &:hover{
-  background-color: #003366;
-  color: white;
+  transform: scale(1.05);
 }
 `
 
