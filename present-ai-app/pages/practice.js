@@ -27,7 +27,7 @@ const Section = styled.section`
   display: flex;
   // justify-content: center;
   align-items: center;
-  height: 30vw;
+  height: 40vw;
   flex-direction: column;
   background-color: #99ccff;
   a{
@@ -40,9 +40,9 @@ const Section = styled.section`
   }
 `
 const Title = styled.div`
-  margin-top: 1vw;
+  margin-top: 5.5vw;
   margin-bottom: 1vw;
-  font-size: 4vw;
+  font-size: 6.5vw;
   font-weight: 900;
 `
 const MainContainer = styled.div`
