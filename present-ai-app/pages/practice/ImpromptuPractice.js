@@ -1,16 +1,18 @@
-import React, {useState} from 'react'
+import React, {useState, useRef} from 'react'
 import styled from 'styled-components'
 import "@fontsource/outfit" 
 import {SlBubbles} from "react-icons/sl"
+import Webcam from "react-webcam";
 
 const ImpromptuPractice = () => {
 
+  const webcamRef = useRef(null);
   const ImpromptuArray = ["My biggest concern for the future is","Real wealth is never measured in money or possessions",
   "If I were an animal Id be a", "If I ruled the world, I would","In what situation is lying a good idea","Goals are good for you",
   "Discribe your life if you were a giraffe","Talk about a time you were embarassed publicly",
   "What is a memory you will never forget and why","You got 5 million dollars, whats the move",
   "You get 2 minutes with your favorite celebrity"]
-  const [Impropmtu, setImpromptu] = useState("");
+  const [Impropmtu, setImpromptu] = useState("My biggest concern for the future is");
 
   function getRandomItem(arr) {
     const randomIndex = Math.floor(Math.random() * arr.length);
@@ -24,6 +26,7 @@ const ImpromptuPractice = () => {
   }
 
   return (
+    <Section>
     <FatherDiv>
       <ImpromptuPracticeContainer>
         <CenteredDiv><ChatIcon /></CenteredDiv>
@@ -33,8 +36,32 @@ const ImpromptuPractice = () => {
         <CenteredDiv><GenerateButton onClick={handleGenerate}>Generate Impromptu</GenerateButton></CenteredDiv>
       </ImpromptuPracticeContainer>
     </FatherDiv>
+    <CameraDiv>
+    <Webcam
+          ref={webcamRef}
+          mirrored={true}
+          height={480}
+          >
+        </Webcam>
+    </CameraDiv>
+    </Section>
   )
 }
+
+const Section = styled.section`
+  font-family: "Outfit", sans-serif; 
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+  height: 50vw;
+  flex-direction: column;
+  background-color: #99ccff;
+`
+const CameraDiv = styled.div`
+  border: 10px solid white;
+  display: flex;
+  justify-content: center;
+`
 
 const SpecialDiv = styled.div`
 width: 100%;
