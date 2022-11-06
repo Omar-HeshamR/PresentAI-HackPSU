@@ -5,6 +5,7 @@ import InstagramIcon from '../assets/InstagramIcon.png'
 import FacebookIcon from '../assets/FacebookIcon.png'
 import YouTubeIcon from '../assets/YouTubeIcon.png'
 import TwitterIcon from '../assets/TwitterIcon.png'
+import Link from 'next/link';
 
 const Footer = () => {
   return (
@@ -18,9 +19,9 @@ const Footer = () => {
             <SocialMediaIcon><Image src={YouTubeIcon}/></SocialMediaIcon>
           </SocialMediaGrid>
           <ButtonContainer><ContactUsButton>CONTACT US</ContactUsButton></ButtonContainer>
-          <LogoContainer><Logo>Present AI</Logo></LogoContainer>
+          <LogoContainer><Link href="/"><Logo>Present AI</Logo></Link></LogoContainer>
         </ThirdContainer>
-        <EndingCaption>&copy; {new Date().getFullYear()} Present AI Inc.</EndingCaption>
+        <EndingCaption>&copy; {new Date().getFullYear()} Present AI </EndingCaption>
       </MainContainer>
     </MainBody>
   )
@@ -73,6 +74,7 @@ flex-direction: row;
 const SocialMediaIcon = styled.div`
 display: flex;
 margin: auto auto;
+cursor: pointer;
 img{
   width: 5vw;
   height: 5vw;
@@ -99,15 +101,23 @@ width: 30%;
 margin: auto auto;
 justify-content: center;
 align-items: center;
+a{
+  text-decoration: none;
+}
 `
 const Logo = styled.div`
 margin: auto auto;
 color: white;
 font-family: "Archivo Black", sans-serif; 
 font-size: 4vw;
+cursor: pointer;
+&:hover{
+  transform: scale(1.05);
+}
 `
 const ContactUsButton = styled.button`
 margin: auto auto;
+cursor: pointer;
 // background-color: red;
 background-color: white;
 // border-radius: 0.75vw;

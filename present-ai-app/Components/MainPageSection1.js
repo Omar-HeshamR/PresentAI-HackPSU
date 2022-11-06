@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { keyframes } from 'styled-components';
+import Link from 'next/link';
 
 const MainPageSection1 = () => {
   return (
@@ -12,7 +13,7 @@ const MainPageSection1 = () => {
         <SubHeaderContainer>
             <SubHeader>Ace all your intreviews and assigments with our AI-powered, research-based instant feedback!</SubHeader>
         </SubHeaderContainer>
-        <GetStartedButton>GET STARTED</GetStartedButton>
+        <GetStartedButton><Link href="./practice">GET STARTED</Link></GetStartedButton>
       </MainContainer>
     </MainBody>
   )
@@ -53,6 +54,16 @@ display: flex;
 width: 90%;
 height: 80%;
 flex-direction: column;
+a{
+  text-decoration: none;
+  color: #ffffff;
+  &:hover{
+    color: #003366;
+  }
+  &[aria-current] {
+    color: #ffffff;
+  }
+}
 `
 
 const MainHeaderContainer = styled.div`
@@ -95,6 +106,7 @@ display: flex;
 font-size: 3.5vw;
 color: #003366;
 letter-spacing: 0.1vw;
+
 `
 
 const GetStartedButton = styled.button`
@@ -109,7 +121,8 @@ padding: 0.65vw 1.4vw;
 color: white;
 font-size: 2.75vw;
 font-weight: 900;
-
+z-index:10;
+cursor: pointer;
 &:hover{
   background-color: white;
   color: #003366;

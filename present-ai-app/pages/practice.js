@@ -2,10 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 import "@fontsource/outfit" 
 import Link from 'next/link'
+import Particle from '../Components/Particle';
 
 const practice = () => {
   return (
     <Section>
+      <Particle />
+
       <Title>Choose A Practice Style</Title>
       <MainContainer>
         <MiniContainer>
@@ -30,6 +33,7 @@ const Section = styled.section`
   height: 40vw;
   flex-direction: column;
   background-color: #99ccff;
+  z-index: -1;
   a{
     text-decoration: none;
     color: #003366;
@@ -82,6 +86,7 @@ padding: 1vw 3vw;
 cursor: pointer;
 transition: all 0.1s ease;
 background-color: #003366;
+z-index:1;
 
 &:hover{
   transform: scale(1.05);

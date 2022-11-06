@@ -1,9 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
+import Particle from '../Components/Particle';
 
 const about = () => {
   return (
     <MainBody>
+      <Particle />
       <MainContainer>
         <AboutUs>About Us</AboutUs>
         <Subheading>Why Present AI?</Subheading>

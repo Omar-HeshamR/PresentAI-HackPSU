@@ -28,16 +28,15 @@ export default Navbar
 
 
 const gradient = keyframes`
-0% {
-  background-position: 0% 50%;
-}
-50% {
-  background-position: 100% 50%;
-}
-100% {
-  background-position: 0% 50%;
-}
-
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 `
 
 const MainBody = styled.div`
@@ -130,6 +129,7 @@ font-weight: 900;
 // height: 5vw;
 // width: 10vw;
 cursor: pointer;
+z-index:10;
 
 &:hover{
   background-color: white;

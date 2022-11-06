@@ -5,10 +5,12 @@ import CommunicateEffectively from '../assets/CommunicateEffectively.png'
 import SpeakConfidently from '../assets/SpeakConfidently.png'
 import Image from 'next/image';
 import { keyframes } from 'styled-components';
+import Particle from './Particle';
 
 const MainPageSection2 = () => {
   return (
     <MainBody>
+      <Particle />
       <MainHeading>Our goal is to make you...</MainHeading>
       <MainContainer>
         <MainGrid>
@@ -28,7 +30,7 @@ const MainBody = styled.div`
 display: flex;
 width: 100%;
 height: 60vw;
-// background-color: lightgreen;
+background-color: #32DE8A;
 justify-content: center;
 align-items: center;
 flex-direction: column;
@@ -78,6 +80,10 @@ display: flex;
 // background-color: lightgreen;
 font-size: 4vw;
 color: #003366;
+cursor: pointer;
+&:hover{
+  transform: scale(1.05);
+}
 `
 
 const Pulse = keyframes`
@@ -93,6 +99,8 @@ margin: auto auto;
 display: flex; 
 width: 95%;
 height: 95%;
+z-index:10;
+cursor: pointer;
 // background-color: lightblue;
 // color: black;
 img{
