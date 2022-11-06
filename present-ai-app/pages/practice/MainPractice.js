@@ -2,13 +2,21 @@ import React from 'react'
 import styled from 'styled-components'
 import Webcam from "react-webcam";
 import { useRef, useState, useEffect, useCallback } from "react";
+import PlayIcon from '../../assets/PlayIcon.png'
+import StopIcon from '../../assets/StopIcon.png'
+import Image from 'next/image';
 import * as tf from "@tensorflow/tfjs";
 import * as handPoseDetection from "@tensorflow-models/hand-pose-detection";
 import * as fp from "fingerpose";
 import { truncatedNormal } from '@tensorflow/tfjs';
+import { useStateContext } from '../../Components/StateContext';
+import { useRouter } from 'next/router'
 
 const MainPractice = () => {
+  const router = useRouter()
+
   const webcamRef = useRef(null);
+  const { recording, setRecording,  gestureFrequency, gestureNoise, gestureData, pushGestureData } = useStateContext();
 
   // const [running, setRunning] = useState(false)
   let running = false
@@ -20,11 +28,16 @@ const MainPractice = () => {
 
   function stopRun(){
     running = false
+    // setRecording(false)
     // console.log('Running value: ', getRunning())
-    console.log(createOutput())
+    const gestureOutput = createOutput()
+    console.log("FINAL DATA: ", gestureOutput)
+    pushGestureData(gestureOutput[0],gestureOutput[1])
+
     totalTime = 0
     handTime = 0
     handStates.length = 0
+    router.push("./Feedback")
     // const isRunning = running['isRunning']
     // setRunning({isRunning: false})
     // console.log('Running value',running)
@@ -35,6 +48,7 @@ const MainPractice = () => {
 
   function startRun() {
     running = true
+    // setRecording(true)
     // console.log('Running value:', getRunning())
     // const isRunning = running['isRunning']
     // setRunning({isRunning: true})
@@ -272,19 +286,131 @@ const MainPractice = () => {
         </Webcam>
         
       </CameraDiv>
-      <button onClick={startRun}>Run</button>
-      <button onClick={stopRun}>Stop</button>
+      <ButtonContainer>
+          <MiniContainer>
+          <PlayButton onClick={startRun} isPlaying = {running}><PlayIconContainer ><Image src={PlayIcon}/></PlayIconContainer></PlayButton>
+          <ContainerText>RECORD</ContainerText>
+          </MiniContainer> 
+          <MiniContainer>
+          <StopButton onClick={stopRun}><StopButtonContainer ><Image src={StopIcon}/></StopButtonContainer></StopButton>
+          <ContainerText>STOP</ContainerText>
+          </MiniContainer>    
+      </ButtonContainer>
     </Section>
   )
 }
 
+
+const Done = styled.button`
+outline: none;
+cursor: pointer;
+border-radius: 8px;
+height: 4vw;
+padding: 0.25vw 0.75vw;
+font-size: 1.35vw;
+font-weight: 800;
+margin-left: 0.5vw;
+border: 4px double #003366;
+color: #ED1C24;
+background-color: #32DE8A;
+transition: all 0.2s ease;
+
+&:hover{
+  transform: scale(1.05);
+}
+`
+
+const ButtonContainer = styled.section`
+margin: 0 auto;
+display: flex;
+flex-direction: row;
+// background-color: red;
+width: 100%;
+height: 20%;
+justify-content: center;
+align-items: center;
+`
+const PlayButton = styled.button`
+height: 4vw;
+width: 4vw;
+// justify-content: center;
+// align-items: center;
+background-color: ${props => props.isPlaying === true ? 'green' : '#99ccff'};
+border-radius: 2vw;
+border: 0.4vw solid white;
+cursor: pointer;
+`
+const PlayIconContainer = styled.div`
+display: flex;
+justifty-content: center;
+align-items: center;
+
+img{
+  margin: auto auto;
+  width: 2.25vw;
+  filter:  ${props => props.isPlaying === true ? 'invert(0.25)' : 'invert(0)'};
+  height: 2.25vw;
+}
+`
+const StopButton = styled.div`
+height: 3.5vw;
+width: 3.5vw;
+// justify-content: center;
+// align-items: center;
+background-color: #99ccff;
+border-radius: 0.75vw;
+border: 0.4vw solid white;
+cursor: pointer;
+`
+const StopButtonContainer = styled.div`
+display: flex;
+justifty-content: center;
+align-items: center;
+width: 100%;
+height: 100%;
+
+img{
+  margin: auto auto;
+  width: 2.5vw;
+  height: 2.5vw;
+}
+`
+
+const ContainerText = styled.div`
+font-size: 2vw;
+font-weight: 900;
+margin-left: 4%;
+margin-right: auto;
+color: #003366;
+`
+const MiniContainer2 = styled.div`
+width: 30%;
+height: 80%;
+display: flex;
+justify-content: center;
+align-items: center;
+// background-color: yellow;
+margin: 0 2%;
+flex-direction: row;
+`
+
+const MiniContainer = styled.div`
+width: 15%;
+height: 80%;
+display: flex;
+justify-content: center;
+align-items: center;
+// background-color: yellow;
+margin: 0 2%;
+flex-direction: row;
+`
 
 const Section = styled.section`
   font-family: "Outfit", sans-serif; 
   display: flex;
   // justify-content: center;
   align-items: center;
-  height: 50vw;
+  height: 70vw;
   flex-direction: column;
   background-color: #99ccff;
 `

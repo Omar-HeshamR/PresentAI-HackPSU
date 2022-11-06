@@ -15,9 +15,23 @@ const Context = createContext();
 export const StateContext = ({ children }) => {
 
     const [ recording, setRecording ] = useState(false);
+    const [seceretGestureInfo, setSeceretGestureInfo] = useState([])
+    const gestureData = [];
 
     function StartRecording() {
         setRecording(true);
+    }
+
+    function pushGestureData(a,b){
+        gestureData.push(a)
+        gestureData.push(b)
+        console.log("FINAL MOV GRADE: ", gestureData[1])
+        console.log("FINAL FREQ GRADE: ", gestureData[0])
+        setSeceretGestureInfo(gestureData)
+    }
+    
+    function fetchLatestGestureData(){
+        return seceretGestureInfo;
     }
 
     function StopRecording() {
@@ -32,6 +46,9 @@ return(
         StartRecording,
         StopRecording,
         assembly,
+        gestureData,
+        pushGestureData,
+        fetchLatestGestureData
     }}
     >
       {children}

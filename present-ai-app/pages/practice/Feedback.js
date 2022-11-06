@@ -1,13 +1,107 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useStateContext } from '../../Components/StateContext';
+
 
 export const Feedback = () => {
+
+const { gestureData, fetchLatestGestureData } = useStateContext();
+console.log(fetchLatestGestureData())
+
+function GestureNoiseTip(gesture_noise){
+    if (gesture_noise < 60){
+        return "Gestures were too light; can be more expressive!"
+    } else if (gesture_noise > 150){
+        return "Hand movement was too rapid; should be more controlled."
+    } else{
+        return "Appropriate level of gesture movement, keep up the good work!"
+    }
+}
+
+function GestureFrequencyTip(x){
+    if (x < 0.5){
+        return "Not enough gestures! Try to be more communicative with your hand!"
+    } else if (x > 1.0){
+        return "You are using way too many gestures! reduce it down!"
+    } else{
+        return "Gestures frequency is on point and are perfect! Good Work!"
+    }
+
+}
+
+function freqMetricCreator(x) {
+    if (x===0.75) {
+        return(100);
+    }
+    else if(x===0.5 || x===1.0) {
+        return(50);
+    }
+    else {
+        let diff = Math.abs(0.75-x)
+        let val = 200*diff
+        let hundred = 100-val
+        if(hundred<0){
+            return(0);
+        }
+        else{
+            hundred = hundred.toPrecision(2)
+            return hundred.toString();
+        }
+    }
+ 
+}
+
+function noiseMetricCreator(x) {
+    if (x===105) {
+        return(100);
+    }
+    else if(x===60 || x===150) {
+        return(50);
+    }
+    else {
+        let diff = Math.abs(105-x)
+        let val = 1.111111*diff
+        let hundred = 100-val
+        if(hundred<0){
+            return(0);
+        }
+        else{
+            hundred = hundred.toPrecision(2)
+            return hundred.toString();
+        }
+    }
+ 
+}
+
+
   return (
     <MainBody>
         <MainContainer>
             <MainHeader>Summary Page</MainHeader>
             <ListContainer>
 
+            <ListItem> 
+                    <ListFrontContainer>
+                        <ListItemTitle>Gesture Noise</ListItemTitle>
+                        <Score>Score: {noiseMetricCreator(fetchLatestGestureData()[1])}/100</Score>
+                    </ListFrontContainer>
+                <ListDataContainer>
+                <ListDataItem>- {GestureNoiseTip(fetchLatestGestureData()[1])} </ListDataItem>
+
+                </ListDataContainer>
+                </ListItem>
+
+
+                <ListItem> 
+                    <ListFrontContainer>
+                        <ListItemTitle>Gesture Frequency</ListItemTitle>
+                        <Score>Score: {freqMetricCreator(fetchLatestGestureData()[0])}/100</Score>
+                    </ListFrontContainer>
+                <ListDataContainer>
+                <ListDataItem>- {GestureFrequencyTip(fetchLatestGestureData()[0])} </ListDataItem>
+
+                </ListDataContainer>
+                </ListItem>
 
                 <ListItem> 
                     <ListFrontContainer>
@@ -19,30 +113,6 @@ export const Feedback = () => {
             
                 </ListDataContainer>
                 </ListItem> 
-
-
-                <ListItem> 
-                    <ListFrontContainer>
-                        <ListItemTitle>Gesture Noise</ListItemTitle>
-                        <Score>Score: 50/100</Score>
-                    </ListFrontContainer>
-                <ListDataContainer>
-                <ListDataItem>- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </ListDataItem>
-
-                </ListDataContainer>
-                </ListItem>
-
-
-                <ListItem> 
-                    <ListFrontContainer>
-                        <ListItemTitle>Gesture Frequency</ListItemTitle>
-                        <Score>Score: 50/100</Score>
-                    </ListFrontContainer>
-                <ListDataContainer>
-                <ListDataItem>- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </ListDataItem>
-
-                </ListDataContainer>
-                </ListItem>
 
 
                 <ListItem> 
