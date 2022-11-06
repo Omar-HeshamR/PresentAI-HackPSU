@@ -2,7 +2,6 @@ import React from 'react'
 import GlobalStyles from "../styles/GlobalStyles";
 import styled from 'styled-components';
 import Navbar from './Navbar';
-import favIcon from "../public/favicon.ico"
 import Footer from "./Footer";
 import Head from 'next/head'
 
@@ -11,7 +10,7 @@ const Layout = ({children}) => {
     <>
         <Head>
           <title>Present AI</title>
-          <link rel="icon"  type="image/x-icon" href= {favIcon} />
+          <link rel="icon"  type="image/x-icon" href= "/favicon.ico" />
         </Head>
 
       <FontSet>
