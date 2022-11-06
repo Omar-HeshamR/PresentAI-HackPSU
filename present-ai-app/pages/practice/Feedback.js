@@ -106,10 +106,10 @@ function noiseMetricCreator(x) {
                 <ListItem> 
                     <ListFrontContainer>
                         <ListItemTitle>Fillers</ListItemTitle>
-                        <Score>Score: 50/100</Score>
+                        <Score>Score: 92/100</Score>
                     </ListFrontContainer>
                 <ListDataContainer>
-                <ListDataItem>- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </ListDataItem>
+                <ListDataItem>- You are only using a limited amount of fillers. Awesome! </ListDataItem>
             
                 </ListDataContainer>
                 </ListItem> 
@@ -118,10 +118,32 @@ function noiseMetricCreator(x) {
                 <ListItem> 
                     <ListFrontContainer>
                         <ListItemTitle>Pace</ListItemTitle>
-                        <Score>Score: 50/100</Score>
+                        <Score>Score: 77/100</Score>
                     </ListFrontContainer>
                 <ListDataContainer>
-                <ListDataItem>- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </ListDataItem>
+                <ListDataItem>- Your presentation moved at an appropriate pace.</ListDataItem>
+
+                </ListDataContainer>
+                </ListItem>
+
+                <ListItem> 
+                    <ListFrontContainer>
+                        <ListItemTitle>Eye Contact</ListItemTitle>
+                        <Score>Score: 79/100</Score>
+                    </ListFrontContainer>
+                <ListDataContainer>
+                <ListDataItem>- Eye contact was varied and maintained throughout presentation.</ListDataItem>
+
+                </ListDataContainer>
+                </ListItem>
+
+                <ListItem> 
+                    <ListFrontContainer>
+                        <ListItemTitle>Facial Expressions</ListItemTitle>
+                        <Score>Score: 85/100</Score>
+                    </ListFrontContainer>
+                <ListDataContainer>
+                <ListDataItem>- Maintained positive to neutral energy throughout presentation.</ListDataItem>
 
                 </ListDataContainer>
                 </ListItem>
@@ -130,20 +152,13 @@ function noiseMetricCreator(x) {
                 <ListItem> 
                     <ListFrontContainer>
                         <ListItemTitle>Your Speech</ListItemTitle>
-                        <Score>50/100</Score>
+                        <Score>90/100</Score>
                     </ListFrontContainer>
                 <ListDataContainer>
-                <ListDataItem>- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </ListDataItem>
-
+                <ListDataItem>Hello, my name is Stephen Leshko, and uh, I am a big fan of the Green Bay Packers. I am also engrossed by artificial intelligence, and I love dogs. My favorite ice cream flavor is cookies and cream.</ListDataItem>
                 </ListDataContainer>
                 </ListItem>
 
-                
-
-                
-                
-
-                
             </ListContainer>
         </MainContainer>
     </MainBody>
