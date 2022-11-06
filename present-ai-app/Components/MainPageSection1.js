@@ -13,7 +13,7 @@ const MainPageSection1 = () => {
         <SubHeaderContainer>
             <SubHeader>Ace all your intreviews and assigments with our AI-powered, research-based instant feedback!</SubHeader>
         </SubHeaderContainer>
-        <GetStartedButton><Link href="./practice">GET STARTED</Link></GetStartedButton>
+        <Link href="./practice"><GetStartedButton>GET STARTED</GetStartedButton></Link>
       </MainContainer>
     </MainBody>
   )
@@ -48,6 +48,7 @@ justify-content: center;
 align-items: center;
 `
 const MainContainer = styled.div`
+align-items: center;
 justify-content: center;
 // background-color: yellow;
 display: flex;

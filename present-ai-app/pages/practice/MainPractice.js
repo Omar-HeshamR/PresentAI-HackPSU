@@ -7,8 +7,6 @@ import StopIcon from '../../assets/StopIcon.png'
 import Image from 'next/image';
 import * as tf from "@tensorflow/tfjs";
 import * as handPoseDetection from "@tensorflow-models/hand-pose-detection";
-import * as fp from "fingerpose";
-import { truncatedNormal } from '@tensorflow/tfjs';
 import { useStateContext } from '../../Components/StateContext';
 import { useRouter } from 'next/router'
 import { toast } from 'react-hot-toast';
