@@ -11,6 +11,7 @@ import * as fp from "fingerpose";
 import { truncatedNormal } from '@tensorflow/tfjs';
 import { useStateContext } from '../../Components/StateContext';
 import { useRouter } from 'next/router'
+import { toast } from 'react-hot-toast';
 
 const MainPractice = () => {
   const router = useRouter()
@@ -33,7 +34,7 @@ const MainPractice = () => {
     const gestureOutput = createOutput()
     console.log("FINAL DATA: ", gestureOutput)
     pushGestureData(gestureOutput[0],gestureOutput[1])
-
+    toast.success('Preparing Quality Feedback...');
     totalTime = 0
     handTime = 0
     handStates.length = 0
@@ -48,6 +49,7 @@ const MainPractice = () => {
 
   function startRun() {
     running = true
+    toast.success(`Recording Started !`);
     // setRecording(true)
     // console.log('Running value:', getRunning())
     // const isRunning = running['isRunning']
@@ -288,7 +290,7 @@ const MainPractice = () => {
       </CameraDiv>
       <ButtonContainer>
           <MiniContainer>
-          <PlayButton onClick={startRun} isPlaying = {running}><PlayIconContainer ><Image src={PlayIcon}/></PlayIconContainer></PlayButton>
+          <PlayButton onClick={startRun} ><PlayIconContainer ><Image src={PlayIcon}/></PlayIconContainer></PlayButton>
           <ContainerText>RECORD</ContainerText>
           </MiniContainer> 
           <MiniContainer>
@@ -335,7 +337,7 @@ height: 4vw;
 width: 4vw;
 // justify-content: center;
 // align-items: center;
-background-color: ${props => props.isPlaying === true ? 'green' : '#99ccff'};
+background-color: #99ccff;
 border-radius: 2vw;
 border: 0.4vw solid white;
 cursor: pointer;
@@ -348,7 +350,6 @@ align-items: center;
 img{
   margin: auto auto;
   width: 2.25vw;
-  filter:  ${props => props.isPlaying === true ? 'invert(0.25)' : 'invert(0)'};
   height: 2.25vw;
 }
 `
