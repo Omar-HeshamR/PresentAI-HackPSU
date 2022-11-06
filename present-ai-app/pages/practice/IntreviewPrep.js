@@ -3,6 +3,10 @@ import styled from 'styled-components'
 import "@fontsource/outfit" 
 import {SlBubbles} from "react-icons/sl"
 import Webcam from "react-webcam";
+// import {BsFillPlayFill} from "react-icons/bs"
+import Image from 'next/image';
+import StopIcon from '../../assets/StopIcon.png'
+import PlayIcon from '../../assets/PlayIcon.png'
 
 const IntreviewPrep = () => {
 
@@ -29,6 +33,7 @@ const IntreviewPrep = () => {
 
   return (
     <Section>
+        
       <FatherDiv>
       <IntreviewPracticeContainer>
         <CenteredDiv><ChatIcon /></CenteredDiv>
@@ -38,6 +43,7 @@ const IntreviewPrep = () => {
         <CenteredDiv><GenerateButton onClick={handleGenerate}>Generate Question</GenerateButton></CenteredDiv>
       </IntreviewPracticeContainer>
       </FatherDiv>
+      {/* <GreatSection> */}
       <CameraDiv>
         <Webcam
           ref={webcamRef}
@@ -46,9 +52,94 @@ const IntreviewPrep = () => {
           >
         </Webcam>
       </CameraDiv>
+      <ButtonContainer>
+        <MiniContainer>
+          <PlayButton><PlayIconContainer><Image src={PlayIcon}/></PlayIconContainer></PlayButton>
+          <ContainerText>RECORD</ContainerText>
+        </MiniContainer>
+        <MiniContainer>
+          <StopButton><StopButtonContainer><Image src={StopIcon}/></StopButtonContainer></StopButton>
+          <ContainerText>STOP</ContainerText>
+        </MiniContainer>
+      </ButtonContainer>
+      {/* </GreatSection> */}
     </Section>
   )
 }
+
+const GreatSection = styled.section`
+display: flex;
+flex-direction: row;
+width: 100%;
+`
+const ButtonContainer = styled.section`
+margin: 0 auto;
+display: flex;
+flex-direction: row;
+// background-color: red;
+width: 100%;
+height: 20%;
+justify-content: center;
+align-items: center;
+`
+const PlayButton = styled.button`
+height: 4vw;
+width: 4vw;
+// justify-content: center;
+// align-items: center;
+background-color: #99ccff;
+border-radius: 2vw;
+border: 0.4vw solid white;
+`
+const PlayIconContainer = styled.div`
+display: flex;
+img{
+  margin: auto auto;
+  width: 2.5vw;
+  height: 2.5vw;
+}
+`
+const StopButton = styled.div`
+height: 3.5vw;
+width: 3.5vw;
+// justify-content: center;
+// align-items: center;
+background-color: #99ccff;
+border-radius: 0.75vw;
+border: 0.4vw solid white;
+
+`
+const StopButtonContainer = styled.div`
+display: flex;
+
+width: 100%;
+height: 100%;
+
+img{
+  margin: auto auto;
+  width: 2.5vw;
+  height: 2.5vw;
+}
+`
+
+const ContainerText = styled.div`
+font-size: 2vw;
+font-weight: 900;
+margin-left: 4%;
+margin-right: auto;
+color: #003366;
+`
+
+const MiniContainer = styled.div`
+width: 15%;
+height: 80%;
+display: flex;
+justify-content: center;
+align-items: center;
+// background-color: yellow;
+margin: 0 2%;
+flex-direction: row;
+`
 
 const Section = styled.section`
   font-family: "Outfit", sans-serif; 
@@ -60,10 +151,13 @@ const Section = styled.section`
   background-color: #99ccff;
 `
 const CameraDiv = styled.div`
+
 border: 10px solid white;
 display: flex;
 justify-content: center;
+
 `
+
 
 const SpecialDiv = styled.div`
 width: 100%;
@@ -94,18 +188,21 @@ const FatherDiv = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
+
 `
 
 const CenteredDiv = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
+
 `
 
 const ChatIcon = styled(SlBubbles)`
 margin-left: 0.35vw;
 margin-right: 1.25vw;
 font-size: 5vw;
+
 `
 
 const IntreviewPracticeContainer = styled.div`
@@ -119,10 +216,13 @@ border-radius: 0.75vw;
 background-color: #e8e8e8;
 padding: 0.25vw 0.75vw;
 font-family: "Outfit", sans-serif; 
+
+
 `
 const Header = styled.div`
 margin-top: 1.5vw;
 font-size: 2vw;
+
 `
 
 const RandomChallange = styled.div`
