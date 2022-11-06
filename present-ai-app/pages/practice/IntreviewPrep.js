@@ -419,7 +419,7 @@ const IntreviewPrep = () => {
       <CameraDiv>
         <Webcam
           ref={webcamRef}
-          audio={true}
+          audio={false}
           audioConstraints={audioConstraints}
           mirrored={true}
           height={480}
