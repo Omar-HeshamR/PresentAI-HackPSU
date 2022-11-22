@@ -155,7 +155,7 @@ function noiseMetricCreator(x) {
                         <Score>90/100</Score>
                     </ListFrontContainer>
                 <ListDataContainer>
-                <ListDataItem>Hello, my name is Stephen Leshko, and uh, I am a big fan of the Green Bay Packers. I am also engrossed by artificial intelligence, and I love dogs. My favorite ice cream flavor is cookies and cream.</ListDataItem>
+                <ListDataItem>-- N/A --</ListDataItem>
                 </ListDataContainer>
                 </ListItem>
 
