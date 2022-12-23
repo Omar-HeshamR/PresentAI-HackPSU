@@ -1,5 +1,7 @@
 # PresentAI
 Ace all your intreviews and assigments with our AI-powered, research-based instant feedback!
+**NOTE:** This project was a demo for HackPSU Fall 2022
+
 
 ## Inspiration
 Imagine presenting a project when your anxiousness, lack of preparation, and fear of public speaking hit you all at once. Social phobia, also called social anxiety disorder, is the third most common mental health disorder after depression and substance abuse, affecting as many as 10 million Americans. This commonly shared feeling among all people was the catalyst for the Present AI. We wanted to develop a full-stack web application that uses AI to return research-supported feedback and serves as a coach for future improvement. Growing up in the information age, we understand how vital it is to communicate ideas and messages effectively. According to a study published in Journal of Education and Educational Development, out of 50 business students in private school in Karachi 75% admitted to fear of public speaking and 90% agreed if proper counseling, instruction and coaching is provided, they could overcome this fear. With Present AI, we can empower the average person to become a capable and confident presenter! 
